@@ -77,7 +77,7 @@ export const projects = [
     date: "2024",
     demo: "https://belote-react.vercel.app/",
     github: "https://github.com/Kylian-Deley/React",
-    image: "/src/assets/images/belote.webp" // Image temporaire de cartes
+    image: "/images/belote.webp" // Remplacez par votre vraie image (belote.jpg, belote.png, etc.)
   },
   {
     id: 2,
@@ -89,7 +89,7 @@ export const projects = [
     date: "2025",
     demo: "https://github.com/Kylian-Deley/Axignis",
     github: "https://github.com/Kylian-Deley/Axignis",
-    image: "/src/assets/images/axignis.png" // Image ERP/Dashboard
+    image: "/images/axignis.png" // Remplacez par votre vraie image (axignis.jpg, axignis.png, etc.)
   },
   {
     id: 3,
@@ -101,7 +101,7 @@ export const projects = [
     date: "2025",
     demo: "https://vpo.tilkeo-audit.com/#/visite_pacs",
     github: "https://github.com/Kylian-Deley/vpo-front",
-    image: "/src/assets/images/TSizer.png" // Placez vos images dans public/images/
+    image: "/images/TSizer.png" // Remplacez par votre vraie image (tsizer.jpg, tsizer.png, etc.)
   },
 
   {
@@ -114,7 +114,7 @@ export const projects = [
     date: "2024",
     demo: "#",
     github: "#",
-    image: "/src/assets/images/portfolio.png" // Image portfolio/website
+    image: "/images/portfolio.png" // Remplacez par votre vraie image (portfolio.jpg, portfolio.png, etc.)
   }
 ]
 
