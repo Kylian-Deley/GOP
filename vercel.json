@@ -1,7 +1,7 @@
 {
     "builds": [
       {
-        "src": "package.json",
+        "src": "dist/**/*",
         "use": "@vercel/static"
       }
     ],
@@ -10,11 +10,5 @@
         "source": "/(.*)",
         "destination": "/index.html"
       }
-    ],
-    "build": {
-      "env": {
-        "NODE_ENV": "production"
-      },
-      "command": "npm run build"
-    }
+    ]
   }
