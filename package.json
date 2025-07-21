@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Portfolio personnel moderne avec Vue.js",
   "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -28,6 +32,6 @@
     "vuejs",
     "tailwindcss"
   ],
-  "author": "",
+  "author": "Kylian DELEY",
   "license": "MIT"
 }
