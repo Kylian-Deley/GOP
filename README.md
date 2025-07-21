@@ -1,216 +1,193 @@
-# Portfolio Personnel
+# 🚀 Portfolio Personnel - Kylian DELEY
 
-Un template de portfolio moderne et responsif créé avec Vue.js 3, Tailwind CSS et des animations élégantes.
+Portfolio moderne et responsive développé avec Vue.js 3, Tailwind CSS et des animations AOS.
 
 ## ✨ Fonctionnalités
 
-- **Design moderne** avec Tailwind CSS et gradients personnalisés
-- **Animations fluides** avec AOS (Animate On Scroll)
-- **Navigation responsive** avec menu mobile
-- **Sections complètes** : Hero, À propos, Compétences, Projets, Contact
-- **Système d'icônes moderne** avec Heroicons
-- **Données centralisées** dans `content.js`
-- **Formulaire de contact** fonctionnel
-- **Filtrage de projets** par catégorie
-- **Optimisé SEO** et performance
+- **Design moderne** avec animations fluides
+- **Responsive** sur tous les appareils
+- **Formulaire de contact fonctionnel** avec EmailJS
+- **Navigation fluide** entre les sections
+- **Projet filtering** par catégories
+- **Barres de progression animées** pour les compétences
+- **Optimisé pour les performances**
 
-## 🚀 Technologies utilisées
+## 🛠️ Technologies
 
-- **Vue.js 3** - Framework JavaScript moderne
-- **Tailwind CSS** - Framework CSS utilitaire
-- **Vue Router** - Routage SPA
-- **AOS** - Animations au scroll
-- **Heroicons** - Librairie d'icônes moderne
+- **Vue.js 3** - Framework JavaScript progressif
 - **Vite** - Build tool rapide
+- **Tailwind CSS** - Framework CSS utility-first
+- **AOS** - Animations on scroll
+- **Heroicons** - Icônes modernes
+- **EmailJS** - Service d'envoi d'emails
 
-## 🛠️ Installation
+## 🚀 Installation
 
-1. **Cloner le projet**
-   \`\`\`bash
-   git clone <url-du-repo>
-   cd portfolio-personnel
-   \`\`\`
+1. **Cloner le repository**
+   ```bash
+   git clone <repository-url>
+   cd GOP
+   ```
 
 2. **Installer les dépendances**
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
-3. **Lancer le serveur de développement**
-   \`\`\`bash
+3. **Configurer EmailJS** (pour le formulaire de contact)
+   ```bash
+   cp src/config/emailjs.template.js src/config/emailjs.js
+   ```
+   Puis modifiez `src/config/emailjs.js` avec vos clés EmailJS.
+
+4. **Lancer le serveur de développement**
+   ```bash
    npm run dev
-   \`\`\`
+   ```
 
-4. **Ouvrir dans le navigateur**
-   Le site sera accessible sur `http://localhost:3000`
+5. **Construire pour la production**
+   ```bash
+   npm run build
+   ```
 
-## 📝 Personnalisation
+## 📧 Configuration EmailJS
 
-### 1. Informations personnelles
+Le formulaire de contact utilise EmailJS pour envoyer les emails directement dans votre boîte mail.
 
-Modifiez les fichiers suivants pour ajouter vos informations :
+### Étapes rapides :
 
-**HeroSection.vue**
-\`\`\`vue
-<!-- Remplacer [Votre Nom] par votre nom -->
-<span class="block gradient-text bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-transparent">
-  Votre Nom Ici
-</span>
-\`\`\`
+1. Créez un compte sur [EmailJS](https://www.emailjs.com/) (gratuit)
+2. Configurez un service Gmail
+3. Créez un template email avec les variables :
+   - `{{from_name}}` - Nom de l'expéditeur
+   - `{{from_email}}` - Email de l'expéditeur  
+   - `{{subject}}` - Sujet du message
+   - `{{message}}` - Corps du message
 
-**ContactSection.vue et FooterSection.vue**
-\`\`\`vue
-<!-- Remplacer les informations de contact -->
-<p class="text-white/80">votre.email@exemple.com</p>
-<p class="text-white/80">+33 1 23 45 67 89</p>
-<p class="text-white/80">Votre Ville, Pays</p>
-\`\`\`
+4. Récupérez vos clés (Service ID, Template ID, Public Key)
+5. Mettez-les dans `src/config/emailjs.js`
 
-### 2. Compétences
+### Template email recommandé :
 
-Dans `SkillsSection.vue`, modifiez les tableaux de compétences :
+**Sujet :** `Nouveau message portfolio : {{subject}}`
 
-\`\`\`javascript
-programmingLanguages: [
-  { name: 'JavaScript' },
-  { name: 'TypeScript' },
-  // Ajoutez vos langages
-],
-frameworks: [
-  { name: 'Vue.js' },
-  { name: 'React' },
-  // Ajoutez vos frameworks
-]
-\`\`\`
+**Corps :**
+```
+Vous avez reçu un nouveau message depuis votre portfolio :
 
-### 3. Projets
+👤 Nom : {{from_name}}
+📧 Email : {{from_email}}
+📋 Sujet : {{subject}}
 
-Dans `ProjectsSection.vue`, remplacez les projets d'exemple :
+💬 Message :
+{{message}}
 
-\`\`\`javascript
-const projects = [
-  {
-    id: 1,
-    title: 'Votre Projet',
-    description: 'Description de votre projet...',
-    technologies: ['Vue.js', 'Node.js'],
-    category: 'Web',
-    status: 'Terminé',
-    date: '2024',
-    demo: 'https://votre-demo.com',
-    github: 'https://github.com/votre-repo'
-  }
-]
-\`\`\`
+---
+Envoyé automatiquement depuis votre portfolio
+```
 
-### 4. Photos et images
+## 📁 Structure du projet
 
-**Images de projets :**
-- Placez vos images dans `public/images/`
-- Référencez-les dans `content.js` : `image: "/images/mon-projet.jpg"`
-- Formats recommandés : 500×300px, JPG/PNG, < 500KB
+```
+GOP/
+├── public/
+│   ├── images/           # Images des projets
+│   └── favicon.ico
+├── src/
+│   ├── assets/          # Assets statiques
+│   ├── components/      # Composants Vue
+│   │   ├── AboutSection.vue
+│   │   ├── ContactSection.vue
+│   │   ├── FooterSection.vue
+│   │   ├── HeroSection.vue
+│   │   ├── Icon.vue
+│   │   ├── Navbar.vue
+│   │   ├── ProjectsSection.vue
+│   │   └── SkillsSection.vue
+│   ├── config/
+│   │   ├── emailjs.js           # Configuration EmailJS (ignoré par Git)
+│   │   └── emailjs.template.js  # Template de configuration
+│   ├── data/
+│   │   └── content.js           # Données du portfolio
+│   ├── App.vue
+│   └── main.js
+├── .gitignore
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
+```
 
-**Photos de profil :**
-- Remplacez les placeholders SVG par vos vraies photos
-- Optimisez les images pour le web
+## 🎨 Personnalisation
 
-📖 **Guide détaillé :** Voir `public/images/README.md`
+### Modifier vos informations
 
-### 5. Couleurs et design
+Toutes les données sont centralisées dans `src/data/content.js` :
 
-Modifiez les couleurs dans `tailwind.config.js` :
+- Informations personnelles
+- Compétences et niveaux
+- Projets et leurs détails
+- Liens sociaux
 
-\`\`\`javascript
-colors: {
-  primary: {
-    // Vos couleurs primaires
-    500: '#votre-couleur',
-  }
+### Ajouter des projets
+
+Ajoutez vos projets dans le tableau `projects` de `content.js` :
+
+```javascript
+{
+  title: "Nom du projet",
+  description: "Description du projet",
+  technologies: ["Vue.js", "Node.js"],
+  category: "Web",
+  status: "Terminé",
+  date: "2025",
+  demo: "https://demo-url.com",
+  github: "https://github.com/user/repo",
+  image: "/images/projet.png"
 }
-\`\`\`
+```
 
-### 6. Icônes
+### Couleurs du thème
 
-Le portfolio utilise Heroicons via un composant `Icon` réutilisable :
+Les couleurs sont définies dans `tailwind.config.js` :
 
-\`\`\`vue
-<Icon name="star" size="md" class="text-primary-600" />
-\`\`\`
-
-**Icônes disponibles :** `star`, `heart`, `users`, `envelope`, `phone`, `map`, `code`, `external-link`, etc.
-
-📖 **Guide complet :** Voir `docs/ICONS.md` pour la liste complète et les exemples d'usage.
-
-## 🎨 Structure des composants
-
-\`\`\`
-src/
-├── components/
-│   ├── Icon.vue            # Composant d'icônes réutilisable
-│   ├── Navbar.vue          # Navigation principale
-│   ├── HeroSection.vue     # Section d'accueil
-│   ├── AboutSection.vue    # Section à propos
-│   ├── SkillsSection.vue   # Section compétences
-│   ├── ProjectsSection.vue # Section projets
-│   ├── ContactSection.vue  # Section contact
-│   └── FooterSection.vue   # Pied de page
-├── data/
-│   └── content.js          # Données centralisées
-├── views/
-│   └── Home.vue           # Page principale
-├── style.css              # Styles globaux
-└── main.js                # Point d'entrée
-\`\`\`
-
-## 📱 Responsive Design
-
-Le portfolio est entièrement responsive avec des breakpoints optimisés :
-- **Mobile** : < 768px
-- **Tablet** : 768px - 1024px  
-- **Desktop** : > 1024px
-
-## 🔧 Scripts disponibles
-
-\`\`\`bash
-npm run dev      # Serveur de développement
-npm run build    # Build de production
-npm run preview  # Prévisualisation du build
-npm run serve    # Serveur de production
-\`\`\`
+```javascript
+colors: {
+  primary: { /* Bleu principal */ },
+  secondary: { /* Gris foncé */ }
+}
+```
 
 ## 🚀 Déploiement
 
-### Netlify
-1. Build le projet : `npm run build`
-2. Uploadez le dossier `dist/` sur Netlify
+### Netlify / Vercel
 
-### Vercel
-1. Connectez votre repo GitHub
-2. Vercel détectera automatiquement la configuration
+1. Buildez le projet : `npm run build`
+2. Déployez le dossier `dist/`
+3. Configurez les variables d'environnement pour EmailJS (optionnel)
 
 ### GitHub Pages
-1. Ajoutez cette configuration dans `vite.config.js` :
-   \`\`\`javascript
-   export default defineConfig({
-     base: '/nom-du-repo/',
-     // ... rest of config
-   })
-   \`\`\`
 
-## 🤝 Contribution
+1. Utilisez l'action GitHub Pages
+2. Buildez et déployez automatiquement sur push
 
-N'hésitez pas à :
-1. Fork le projet
-2. Créer une branche feature
-3. Commit vos changements
-4. Ouvrir une Pull Request
+## 🔧 Scripts disponibles
+
+- `npm run dev` - Serveur de développement
+- `npm run build` - Build de production
+- `npm run preview` - Prévisualiser la build locale
 
 ## 📄 Licence
 
-Ce projet est sous licence MIT. Vous êtes libre de l'utiliser et le modifier.
+MIT License - Libre d'utilisation et de modification.
+
+## 👤 Auteur
+
+**Kylian DELEY**
+- Email: kylian.deley1@gmail.com
+- GitHub: [Kylian-Deley](https://github.com/Kylian-Deley)
+- LinkedIn: [Profil LinkedIn](https://linkedin.com/in/kylian-deley)
 
 ---
 
-**Créé avec ❤️ pour votre projet école**
-
-N'oubliez pas de personnaliser entièrement le contenu avec vos propres informations, projets et compétences ! 
+💡 **Portfolio template** parfait pour étudiants en informatique et développeurs ! 
