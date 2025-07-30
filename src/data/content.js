@@ -21,7 +21,7 @@ export const aboutMe = {
   <br><br> Je suis joueur de rugby depuis plus de 10 ans et j'aime le sport en général.`,
   stats: {
     experience: "4",
-    projects: "4+", 
+    projects: "10+", 
     technologies: "8+"
   },
   interests: [

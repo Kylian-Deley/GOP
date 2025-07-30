@@ -189,5 +189,3 @@ MIT License - Libre d'utilisation et de modification.
 - LinkedIn: [Profil LinkedIn](https://linkedin.com/in/kylian-deley)
 
 ---
-
-💡 **Portfolio template** parfait pour étudiants en informatique et développeurs ! 
